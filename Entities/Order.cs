@@ -10,16 +10,13 @@ namespace iDelivery.Entities
         public OrderStatus Status { get; set; }
         public Client Client { get; set; }
         public List<OrderItem> Items { get; set; } = new List<OrderItem>();
-
         public Order() { }
-
         public Order(DateTime moment, OrderStatus status, Client client)
         {
             Moment = moment;
             Status = status;
             Client = client;
         }
-
         public void AddItem(OrderItem item)
         {
             Items.Add(item);
@@ -36,10 +33,9 @@ namespace iDelivery.Entities
             }
             return sum;
         }
-
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             sb.AppendLine("ORDER SUMMARY:");
             sb.AppendLine("Order moment: " + Moment.ToString("dd/MM/yyyy HH:mm:ss"));
             sb.AppendLine("Order status: " + Status);

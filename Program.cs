@@ -4,38 +4,31 @@ using iDelivery.Entities.Enums;
 
 Console.WriteLine("Enter client data: ");
 Console.Write("Name: ");
-String clientName = Console.ReadLine(); // Alex Green
+string clientName = Console.ReadLine();
 Console.Write("Email: ");
-String email = Console.ReadLine(); // alex@gmail.com
+string email = Console.ReadLine();
 Console.Write("Birth date (DD/MM/YYYY): ");
-DateTime birthDate = DateTime.Parse(Console.ReadLine()); // 15/03/1985
-
+DateTime birthDate = DateTime.Parse(Console.ReadLine());
 Console.WriteLine("Enter order data: ");
 Console.Write("Status: ");
-OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine()); // Processing
-
+OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
 Client client = new(clientName, email, birthDate);
 Order order = new(DateTime.Now, status, client);
-
 Console.Write("How many items to this order? ");
-int amountItems = int.Parse(Console.ReadLine()); // 2
+int amountItems = int.Parse(Console.ReadLine());
 
 for (int i = 1; i <= amountItems; i++)
 {
     Console.WriteLine($"Enter #{i} item data:");
     Console.Write("Product name: ");
-    string productName = Console.ReadLine(); // TV / Mouse
+    string productName = Console.ReadLine();
     Console.Write("Product price: ");
-    double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture); // 1000.00 / 40.00
-    Product product = new Product(productName, price);
-
+    double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+    Product product = new(productName, price);
     Console.Write("Quantity: ");
-    int quantity = int.Parse(Console.ReadLine()); // 1 / 2
-    OrderItem orderItem = new OrderItem(product, price, quantity);
-
+    int quantity = int.Parse(Console.ReadLine());
+    OrderItem orderItem = new(product, price, quantity);
     order.AddItem(orderItem);
 }
-
-
 Console.WriteLine();
 Console.WriteLine(order);

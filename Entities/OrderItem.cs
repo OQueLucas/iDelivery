@@ -7,7 +7,6 @@ namespace iDelivery.Entities
         Product Product { get; set; }
         public int Quantity { get; set; }
         public double Price { get; set; }
-
         public OrderItem() { }
         public OrderItem(Product product, double price, int quantity)
         {
@@ -15,11 +14,9 @@ namespace iDelivery.Entities
             Quantity = quantity;
             Product = product;
         }
-
         public double SubTotal() {
             return Quantity * Price;
         }
-
         public override string ToString()
         {
             return Product.Name

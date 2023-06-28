@@ -1,28 +1,25 @@
-﻿namespace iDelivery.Entities
+﻿internal class Client
 {
-    internal class Client
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public DateTime BirthDate { get; set; }
+
+    public Client() { }
+
+    public Client(string name, string email, DateTime birthDate)
     {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public DateTime BirthDate { get; set; }
+        Name = name;
+        Email = email;
+        BirthDate = birthDate;
+    }
 
-        public Client() { }
+    public override string ToString()
+    {
+        return Name 
+            + ", (" 
+            + BirthDate.ToString("dd/MM/yyyy")
+            + ") - " 
+            + Email;
 
-        public Client(string name, string email, DateTime birthDate)
-        {
-            Name = name;
-            Email = email;
-            BirthDate = birthDate;
-        }
-
-        public override string ToString()
-        {
-            return Name 
-                + " (" 
-                + BirthDate.ToString("dd/MM/yyyy")
-                + ") - " 
-                + Email;
-
-        }
     }
 }
