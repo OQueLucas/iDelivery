@@ -1,17 +1,16 @@
-﻿using Enum.Entities;
+﻿using System.Globalization;
 using iDelivery.Entities;
 using iDelivery.Entities.Enums;
-using System.Globalization;
 
-Console.WriteLine("Enter cliente data: ");
+Console.WriteLine("Enter client data: ");
 Console.Write("Name: ");
 String clientName = Console.ReadLine(); // Alex Green
 Console.Write("Email: ");
 String email = Console.ReadLine(); // alex@gmail.com
-Console.Write("Birth date(DD / MM / YYYY): ");
-DateTime birthDate = DateTime.Parse(Console.ReadLine()); // 15 / 03 / 1985
+Console.Write("Birth date (DD/MM/YYYY): ");
+DateTime birthDate = DateTime.Parse(Console.ReadLine()); // 15/03/1985
 
-Console.WriteLine("Enter order data:");
+Console.WriteLine("Enter order data: ");
 Console.Write("Status: ");
 OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine()); // Processing
 

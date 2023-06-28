@@ -1,9 +1,8 @@
 ﻿using System.Text;
 using System.Globalization;
-using iDelivery.Entities;
 using iDelivery.Entities.Enums;
 
-namespace Enum.Entities
+namespace iDelivery.Entities
 {
     internal class Order
     {
@@ -44,7 +43,7 @@ namespace Enum.Entities
             sb.AppendLine("ORDER SUMMARY:");
             sb.AppendLine("Order moment: " + Moment.ToString("dd/MM/yyyy HH:mm:ss"));
             sb.AppendLine("Order status: " + Status);
-            sb.Append("Client: " + Client);
+            sb.AppendLine("Client: " + Client);
             sb.AppendLine("Order items: ");
             foreach (OrderItem item in Items)
             {
